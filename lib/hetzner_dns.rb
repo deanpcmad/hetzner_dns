@@ -23,5 +23,6 @@ module HetznerDNS
   end
 
   autoload :Zone, "hetzner_dns/models/zone"
+  autoload :Record, "hetzner_dns/models/record"
 
 end

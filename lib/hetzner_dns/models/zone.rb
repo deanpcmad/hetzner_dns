@@ -28,6 +28,21 @@ module HetznerDNS
         response.success?
       end
 
+      def records(id:)
+        response = Client.get_request("records", params: { zone_id: id })
+        Collection.from_response(response, type: Record, key: "records")
+      end
+
+      def create_record(zone:, name:, type:, value:, ttl: nil)
+        response = Client.post_request("records", body: { zone_id: zone, name: name, type: type, value: value, ttl: ttl })
+        Record.new(response.body["record"])
+      end
+
+      def update_record(zone:, record:, name:, type:, value:, ttl: nil)
+        response = Client.put_request("records/#{record}", body: { zone_id: zone, name: name, type: type, value: value, ttl: ttl })
+        Record.new(response.body["record"])
+      end
+
     end
 
   end
