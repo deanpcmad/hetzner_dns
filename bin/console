@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "hetzner_dns"
+
+# Load environment variables from .env file
+require 'dotenv/load'
+
+# You can add fixtures and/or initialization code here to make experimenting
+# with your gem easier. You can also use a different console, if you like.
+
+# (If you use this, don't forget to add pry to your Gemfile!)
+# require "pry"
+# Pry.start
+
+HetznerDNS.configure do |config|
+  config.api_token = ENV["HETZNER_DNS_TOKEN"]
+end
+
+require "irb"
+IRB.start(__FILE__)
