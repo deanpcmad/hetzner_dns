@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://dns.hetzner.com/api/v1/zones
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Auth-API-Token:
+      - "<AUTHORIZATION>"
+      User-Agent:
+      - hetzner_dns/v0.1.0 (github.com/deanpcmad/hetzner_dns)
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '655'
+      connection:
+      - keep-alive
+      vary:
+      - Origin
+      date:
+      - Thu, 30 May 2024 20:13:55 GMT
+      access-control-allow-origin:
+      - "*"
+      x-ratelimit-remaining-minute:
+      - '299'
+      x-ratelimit-limit-minute:
+      - '300'
+      ratelimit-remaining:
+      - '299'
+      ratelimit-limit:
+      - '300'
+      ratelimit-reset:
+      - '6'
+    body:
+      encoding: UTF-8
+      string: '{"zones":[{"id":"yE67d3N5DNrX4pMfcDCi6A","name":"deanpcmad.dev","ttl":86400,"registrar":"","legacy_dns_host":"","legacy_ns":[],"ns":["hydrogen.ns.hetzner.com.","oxygen.ns.hetzner.com.","helium.ns.hetzner.de."],"created":"2024-05-30
+        20:10:29.444 +0000 UTC","verified":"","modified":"2024-05-30 20:10:29.444
+        +0000 UTC","project":"","owner":"","permission":"","zone_type":{"id":"","name":"","description":"","prices":null},"status":"verified","paused":false,"is_secondary_dns":false,"txt_verification":{"name":"","token":""},"records_count":0}],"meta":{"pagination":{"page":1,"per_page":100,"previous_page":1,"next_page":1,"last_page":1,"total_entries":1}}}
+
+        '
+  recorded_at: Thu, 30 May 2024 20:13:55 GMT
+recorded_with: VCR 6.2.0

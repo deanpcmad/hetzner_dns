@@ -12,7 +12,6 @@ VCR.configure do |config|
   config.hook_into :faraday
 
   config.filter_sensitive_data("<AUTHORIZATION>") { ENV["HETZNER_DNS_TOKEN"] }
-  config.filter_sensitive_data("<IP_ADDRESS>") { ENV["IP_ADDRESS"] }
 end
 
 HetznerDNS.configure do |config|
